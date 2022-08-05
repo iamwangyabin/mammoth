@@ -123,7 +123,6 @@ class ResNet(MammothBackbone):
         :param returnt: return type (a string among 'out', 'features', 'all')
         :return: output tensor (output_classes)
         """
-        
         out = relu(self.bn1(self.conv1(x))) # 64, 32, 32
         if hasattr(self, 'maxpool'):
             out = self.maxpool(out)

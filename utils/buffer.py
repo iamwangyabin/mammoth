@@ -31,8 +31,13 @@ def icarl_replay(self, dataset, val_set_split=0):
         need_aug = hasattr(dataset.train_loader.dataset, 'not_aug_transform')
         if not need_aug:
             refold_transform = lambda x: x.cpu()
-        else:    
-            data_shape = len(dataset.train_loader.dataset.data[0].shape)
+        else:
+            sample_data = dataset.train_loader.dataset.data[0]
+            if sample_data.dtype.type is np.str_: # for domainnet
+                data_shape = 2
+            else:
+                data_shape = len(sample_data.shape)
+
             if data_shape == 3:
                 refold_transform = lambda x: (x.cpu()*255).permute([0, 2, 3, 1]).numpy().astype(np.uint8)
             elif data_shape == 2:
@@ -47,7 +52,6 @@ def icarl_replay(self, dataset, val_set_split=0):
             dataset.train_loader.dataset.data[~val_train_mask],
             refold_transform((self.buffer.examples)[:len(self.buffer)][~buff_val_mask])
             ])
-
         if val_set_split > 0:
             # REDUCE AND MERGE VALIDATION SET
             self.val_loader.dataset.targets = np.concatenate([

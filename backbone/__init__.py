@@ -88,6 +88,10 @@ class MammothBackbone(nn.Module):
         :return: gradients list
         """
         grads = []
-        for pp in list(self.parameters()):
-            grads.append(pp.grad.view(-1))
+        #for pp in list(self.parameters()):
+        for name, pp in self.named_parameters():
+            if pp.grad is None:
+                print(name)
+            if pp.grad is not None:
+                grads.append(pp.grad.view(-1))
         return grads

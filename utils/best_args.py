@@ -888,6 +888,26 @@ best_args = {
             500: {'m': 0.7, 'alpha':0.3, 'beta': 0.8, 'gamma': 0.85, 'optim_wd': 0, 'lambd': 0.05, 'eta': 0.001, 'lr': 0.03, 'simclr_temp': 5, 'optim_mom': 0, 'simclr_batch_size':64, 'simclr_num_aug': 2},
             2000: {'m': 0.2, 'alpha':0.6, 'beta': 0.9, 'gamma': 0.85, 'optim_wd': 0, 'lambd': 0.05, 'eta': 0.01, 'lr': 0.03, 'simclr_temp': 5, 'optim_mom': 0, 'simclr_batch_size':64, 'simclr_num_aug': 2}
         }
-    }
-
+    },
+    'seq-domainnet': {
+        'lwf': {-1: {'lr': 0.003, 'optim_mom': 0, 'optim_wd': 5e-4, 'batch_size': 128, 'n_epochs': 10}},
+        'sgd': {-1: {'lr': 0.003, 'optim_mom': 0, 'optim_wd': 0, 'batch_size': 128, 'n_epochs': 10}},
+        'ewc_on': {-1: {'lr': 0.001, 'e_lambda': 0.7, 'gamma': 1.0, 'batch_size': 128, 'n_epochs': 10}},
+        'er': {1000: {'lr': 0.002, 'batch_size': 64, 'minibatch_size': 16, 'n_epochs': 10},
+               5000: {'lr': 0.002, 'batch_size': 64, 'minibatch_size': 16, 'n_epochs': 10}},
+        'bic': {
+            1000: {'lr': 0.003, 'optim_mom': 0, 'optim_wd': 0, 'n_epochs': 10, 'batch_size': 128, 'minibatch_size': 16,},
+            5000: {'lr': 0.003, 'optim_mom': 0, 'optim_wd': 0, 'n_epochs': 10, 'batch_size': 128, 'minibatch_size': 16,},
+        },
+        'gdumb': {
+            1000: {'lr': 0.001, 'maxlr': 0.05, 'minlr': 5e-4, 'cutmix_alpha': 1, 'fitting_epochs': 250, 'optim_mom': 0.9,
+                  'optim_wd': 1e-6, 'n_epochs': 10},
+            5000: {'lr': 0.001, 'maxlr': 0.05, 'minlr': 5e-4, 'cutmix_alpha': 1, 'fitting_epochs': 250, 'optim_mom': 0,
+                   'optim_wd': 1e-6, 'n_epochs': 10},
+        },
+        'derpp': {1000: {'lr': 0.002, 'n_epochs': 10, 'batch_size': 16, 'minibatch_size': 16, 'alpha': 0.5, 'beta': 1.0},
+                  5000: {'lr': 0.002, 'n_epochs': 10, 'batch_size': 16, 'minibatch_size': 16, 'alpha': 0.5, 'beta': 1.0}},
+    },
 }
+
+
