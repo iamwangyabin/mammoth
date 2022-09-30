@@ -894,10 +894,15 @@ best_args = {
         'sgd': {-1: {'lr': 0.003, 'optim_mom': 0, 'optim_wd': 0, 'batch_size': 128, 'n_epochs': 10}},
         'ewc_on': {-1: {'lr': 0.001, 'e_lambda': 0.7, 'gamma': 1.0, 'batch_size': 128, 'n_epochs': 10}},
         'er': {1000: {'lr': 0.002, 'batch_size': 64, 'minibatch_size': 16, 'n_epochs': 10},
-               5000: {'lr': 0.002, 'batch_size': 64, 'minibatch_size': 16, 'n_epochs': 10}},
+               5000: {'lr': 0.002, 'batch_size': 64, 'minibatch_size': 16, 'n_epochs': 10},
+               500: {'lr': 0.002, 'batch_size': 64, 'minibatch_size': 16, 'n_epochs': 10},
+               250: {'lr': 0.002, 'batch_size': 64, 'minibatch_size': 16, 'n_epochs': 10},
+               },
         'bic': {
             1000: {'lr': 0.003, 'optim_mom': 0, 'optim_wd': 0, 'n_epochs': 10, 'batch_size': 128, 'minibatch_size': 16,},
             5000: {'lr': 0.003, 'optim_mom': 0, 'optim_wd': 0, 'n_epochs': 10, 'batch_size': 128, 'minibatch_size': 16,},
+            500: {'lr': 0.003, 'optim_mom': 0, 'optim_wd': 0, 'n_epochs': 10, 'batch_size': 128, 'minibatch_size': 16,},
+            250: {'lr': 0.003, 'optim_mom': 0, 'optim_wd': 0, 'n_epochs': 10, 'batch_size': 128, 'minibatch_size': 16,},
         },
         'gdumb': {
             1000: {'lr': 0.001, 'maxlr': 0.05, 'minlr': 5e-4, 'cutmix_alpha': 1, 'fitting_epochs': 250, 'optim_mom': 0.9,
@@ -906,7 +911,11 @@ best_args = {
                    'optim_wd': 1e-6, 'n_epochs': 10},
         },
         'derpp': {1000: {'lr': 0.002, 'n_epochs': 10, 'batch_size': 16, 'minibatch_size': 16, 'alpha': 0.5, 'beta': 1.0},
-                  5000: {'lr': 0.002, 'n_epochs': 10, 'batch_size': 16, 'minibatch_size': 16, 'alpha': 0.5, 'beta': 1.0}},
+                  5000: {'lr': 0.002, 'n_epochs': 10, 'batch_size': 16, 'minibatch_size': 16, 'alpha': 0.5, 'beta': 1.0},
+                  500: {'lr': 0.002, 'n_epochs': 10, 'batch_size': 16, 'minibatch_size': 16, 'alpha': 0.5, 'beta': 1.0},
+                  250: {'lr': 0.002, 'n_epochs': 10, 'batch_size': 16, 'minibatch_size': 16, 'alpha': 0.5, 'beta': 1.0}
+                  },
+
     },
 }
 
